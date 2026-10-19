@@ -35,4 +35,129 @@ nav div{display:flex;gap:8px;flex-wrap:wrap}
 .hero .acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
 /* Etiqueta de sección con líneas */
 .eb{display:flex;align-items:center;justify-content:center;gap:16px;font:400 15px "JetBrains Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--mist)}
-.eb::before,.eb::after{content:"";height:1px;width:min(120px,18vw);background:linear-gradient(90
+.eb::before,.eb::after{content:"";height:1px;width:min(120px,18vw);background:linear-gradient(90deg,transparent,var(--hair))}
+.eb::after{transform:scaleX(-1)}
+section{padding:clamp(48px,9vw,100px) 0}
+section>h2{font-size:clamp(28px,5vw,44px);line-height:1.16;text-align:center;margin:14px 0 12px}
+.lead{max-width:640px;margin:0 auto 40px;text-align:center;color:var(--mist)}
+/* Tarjetas de vidrio */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:16px}
+.card{border-radius:16px;padding:24px;background:rgba(186,214,247,.03);box-shadow:inset 0 1px 1px rgba(199,211,234,.12),inset 0 24px 48px rgba(199,211,234,.05),0 24px 32px rgba(6,6,14,.7)}
+.card h3{font-size:24px;line-height:1.17;margin-bottom:10px;color:var(--ice)}
+.card p{margin:0 0 10px;color:var(--mist);font-size:15px}
+.card strong{color:var(--frost);font-weight:600}
+.badge{display:inline-block;border-radius:6px;padding:4px 8px;margin:0 6px 10px 0;font:500 12px Inter,sans-serif;background:rgba(199,211,234,.12);color:var(--frost)}
+.card .pill{margin-top:8px}
+.about{max-width:720px;margin:0 auto;text-align:center;font-size:18px;color:var(--mist)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+footer{padding:40px 0 56px;text-align:center;color:var(--fog);font-size:14px;border-top:1px solid var(--hair)}
+@media(max-width:600px){nav{justify-content:center}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav>
+  <b>Joan Nicolas Rey Gomez</b>
+  <div>
+    <a class="pill" href="#sobre-mi">Sobre mí</a>
+    <a class="pill" href="#proyectos">Proyectos</a>
+    <a class="pill" href="#habilidades">Habilidades</a>
+    <a class="pill" href="#contacto">Contacto</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="eb">Portafolio profesional</div>
+  <h1 class="grad">Joan Nicolas Rey Gomez</h1>
+  <!-- CAMBIA: escribe el nombre exacto de tu programa si quieres (por ejemplo, Ingeniería de Sistemas) -->
+  <p>Estudiante de ingeniería, primer semestre.</p>
+  <p>Me interesa aprender a programar y construir aplicaciones web que resuelvan problemas reales.</p>
+  <div class="acts">
+    <a class="pill cta" href="#proyectos">Ver proyectos</a>
+    <!-- CAMBIA: pega aquí la URL real de tu perfil de LinkedIn (la copias desde tu perfil) -->
+    <a class="pill" href="https://www.linkedin.com/in/TU-USUARIO-LINKEDIN/">LinkedIn</a>
+    <a class="pill" href="https://github.com/Nicolas-rey">GitHub</a>
+  </div>
+</header>
+
+<section id="sobre-mi">
+  <div class="eb">Sobre mí</div>
+  <h2 class="grad">Quién soy y qué estoy aprendiendo</h2>
+  <p class="about">Soy estudiante de ingeniería y estoy en mi primer semestre. Estoy aprendiendo a programar con Python y a razonar con lógica booleana, y me interesa construir aplicaciones web que ayuden en problemas reales, como el mantenimiento de maquinaria industrial. Este portafolio documenta lo que estoy aprendiendo, incluyendo lo que todavía me falta mejorar.</p>
+</section>
+
+<section id="proyectos">
+  <div class="eb">Proyectos</div>
+  <h2 class="grad">Lo que he construido y practicado</h2>
+  <p class="lead">Cada proyecto indica mi contribución, las herramientas usadas y qué aprendí.</p>
+  <div class="grid">
+
+    <article class="card">
+      <span class="badge">Prototipo funcional</span><span class="badge">Trabajo en pareja</span>
+      <h3>Maqnex: mantenimiento preventivo de maquinaria</h3>
+      <p><strong>Objetivo:</strong> ayudar a supervisar el estado de las máquinas de una planta de bebidas y planificar su mantenimiento, con semáforo de estado, órdenes de trabajo, repuestos y canales de comunicación.</p>
+      <p><strong>Mi contribución:</strong> definí la idea junto con mi compañero, los requisitos y el estilo visual, y probé cada versión pidiendo ajustes. El código se desarrolló con ayuda de Claude (IA); todavía estoy aprendiendo a leerlo y modificarlo por mi cuenta.</p>
+      <p><strong>Tecnologías:</strong> HTML, CSS y JavaScript. Los sensores y los datos son simulados.</p>
+      <p><strong>Aprendizaje:</strong> la diferencia entre un prototipo y un producto real (sin servidor no hay seguridad real ni datos compartidos) y qué miden los indicadores de mantenimiento, como la disponibilidad, el MTBF y el MTTR. Falta: guardar los datos en un servidor y un inicio de sesión seguro.</p>
+      <!-- Este enlace funcionará cuando subas el proyecto a un repositorio llamado maqnex -->
+      <a class="pill" href="https://github.com/Nicolas-rey/maqnex">Ver código fuente</a>
+    </article>
+
+    <article class="card">
+      <span class="badge">En desarrollo</span><span class="badge">Individual</span>
+      <h3>Taller de lógica de programación en Python</h3>
+      <p><strong>Objetivo:</strong> practicar variables, funciones (<code>def</code> y <code>return</code>) y la resolución de problemas paso a paso.</p>
+      <p><strong>Mi contribución:</strong> resolví los ejercicios del taller por mi cuenta y pedí ayuda para entender las funciones.</p>
+      <p><strong>Tecnologías:</strong> Python.</p>
+      <p><strong>Aprendizaje:</strong> cómo dividir un problema en funciones y qué devuelve cada una. Falta: practicar con ejercicios más largos.</p>
+      <!-- Este enlace funcionará cuando subas tus ejercicios a un repositorio llamado python-logica -->
+      <a class="pill" href="https://github.com/Nicolas-rey/python-logica">Ver ejercicios</a>
+    </article>
+
+    <article class="card">
+      <span class="badge">En desarrollo</span><span class="badge">Individual</span>
+      <h3>Taller de diseño lógico</h3>
+      <p><strong>Objetivo:</strong> entender el álgebra booleana, las operaciones bit a bit, las tablas de verdad y los diagramas de compuertas lógicas.</p>
+      <p><strong>Mi contribución:</strong> desarrollé los ejercicios del taller.</p>
+      <p><strong>Tecnologías:</strong> álgebra booleana y diagramas de compuertas.</p>
+      <p><strong>Aprendizaje:</strong> cómo se representa una condición como una tabla de verdad y como un circuito. Falta: agregar capturas del taller como evidencia.</p>
+    </article>
+
+  </div>
+</section>
+
+<section id="habilidades">
+  <div class="eb">Habilidades</div>
+  <h2 class="grad">Qué sé hoy y qué uso con autonomía</h2>
+  <p class="lead">Separo lo que estoy empezando a aprender de lo que ya puedo usar por mi cuenta.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Conocimientos iniciales</h3>
+      <div class="tags"><span class="badge">Python: variables y funciones</span><span class="badge">Álgebra booleana</span><span class="badge">Compuertas lógicas</span><span class="badge">HTML y CSS básicos</span></div>
+    </div>
+    <div class="card">
+      <h3>Herramientas que ya uso</h3>
+      <div class="tags"><span class="badge">GitHub y GitHub Pages</span><span class="badge">Claude (IA) como apoyo para prototipar y documentar</span></div>
+    </div>
+    <div class="card">
+      <h3>Habilidades personales</h3>
+      <div class="tags"><span class="badge">Trabajo en equipo</span><span class="badge">Presentación de proyectos</span><span class="badge">Aprendizaje autónomo</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="eb">Contacto profesional</div>
+  <h2 class="grad">Conectemos</h2>
+  <p class="lead">Consulta mi perfil de LinkedIn para conocer más sobre mis intereses y mi formación.</p>
+  <div class="hero acts" style="padding:0;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <a class="pill cta" href="https://www.linkedin.com/in/TU-USUARIO-LINKEDIN/">Mi LinkedIn</a>
+    <a class="pill" href="https://github.com/Nicolas-rey">Mi GitHub</a>
+  </div>
+</section>
+
+</div>
+<footer>Portafolio hecho con HTML y CSS, publicado con GitHub Pages.</footer>
+</body>
+</html>
